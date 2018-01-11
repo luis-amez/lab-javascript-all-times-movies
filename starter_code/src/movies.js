@@ -29,7 +29,14 @@ function turnHoursToMinutes(movies) {
 }
 
 // Get the average of all rates with 2 decimals 
+function ratesAverage(movies) {
+  var sumRating = movies.reduce(function(acu, movie) {
+    return acu + parseFloat(movie.rate);
+  }, 0);
 
+  var averageRating = Math.round(sumRating / movies.length * 100) / 100;
+  return averageRating;
+}
 
 // Get the average of Drama Movies
 
